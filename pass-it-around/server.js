@@ -16,14 +16,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/empty', (req, res) => {
-    res.send(`No bottles of beer on the wall! <a href="http://localhost:3000/99">Start Over<a>`)
+    res.send(`No more bottles of beer on the wall! <a href="http://localhost:3000/99">Start Over<a>`)
 })
 
 app.get('/:bottlesOfBeer', (req, res) => {
     if (req.params.bottlesOfBeer > 1){
         res.send(` ${req.params.bottlesOfBeer} bottles of beer on the wall! ${req.params.bottlesOfBeer} bottles of beer on the wall, ${req.params.bottlesOfBeer} bottles of beeeeeer, <a href="http://localhost:3000/${req.params.bottlesOfBeer - 1}">Take One Down, Pass It Around</a>`)
     }if (req.params.bottlesOfBeer = 1){
-        res.send(`${req.params.bottlesOfBeer} bottle of beer on the wall! ${req.params.bottlesOfBeer} bottle of beeeeeeer, <a href="http://localhost:3000/empty"> Take One Down, Pass It Around</a>`)
+        res.send(`${req.params.bottlesOfBeer} bottle of beer on the wall! ${req.params.bottlesOfBeer} bottle of beer on the wall, ${req.params.bottlesOfBeer} bottle of beeeeeeer, <a href="http://localhost:3000/empty"> Take One Down, Pass It Around</a>`)
     }
 })
 
